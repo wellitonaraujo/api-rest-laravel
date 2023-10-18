@@ -1,26 +1,31 @@
 <?php
 
-namespace App;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
+use App\Models\Store;
 use Illuminate\Http\Request;
 
-class StoreController extends Controller
+class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+     * @return  \Illuminate\Http\Response
+     */ 
+    public function index(Store $store)
     {
-        //
+      
+       return $store->products;
+    }
+
+     /**
+     * @param Store $store
+     * @return  \Illuminate\Http\Response
+     */ 
+    public function store(Store $store)
+    {
+      return $store;
     }
 
     /**
